@@ -1,7 +1,8 @@
 <html>
+    <?php include '../View/Include/Header.php' ?> 
     <body>
-        <form action="index.php" method="POST" id="TokenRequest">
-            <input type="hidden" name="action" value="Token">
+        <form action="index.php" method="POST">
+            <input type="hidden" name="action" value="requestToken">
             Username:<br>
             <input type="text" name="username" value="">
             <br>

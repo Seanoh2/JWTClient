@@ -24,11 +24,11 @@ switch($action) :
         $keyReq = "?username=" . $username
                 . "&password=" . $password
                 . "&memType="  . $memType
-                . "&Service=Requesr_Key";
+                . "&Service=RequestKey";
         
         // Initialise Curl
         $ch = Curl_init();
-        curl_setopt($ch, CURLOPT_URL, $basicUrl . $keyReq);
+        curl_setopt($ch, CURLOPT_URL, $basicurl . $keyReq);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_HEADER, FALSE);
         curl_setopt($ch, CURLOPT_HTTPHEADER,
@@ -45,7 +45,7 @@ switch($action) :
         break;
     
     case 'showToken' :
-        
+        include '../View/ShowToken.php';
         break;
     
     case 'requestService1' :
@@ -78,6 +78,10 @@ switch($action) :
         curl_close($ch);
         
         include '../View/ShowResponse.php';
+        break;
+    
+    default :
+        include '../View/Error.php';
         break;
 endswitch;
 
